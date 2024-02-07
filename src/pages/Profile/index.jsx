@@ -6,6 +6,8 @@ import { useAuth } from '../../hooks/auth';
 
 import { api } from '../../services/api';
 
+import avatarPlaceholder from '../../assets/avatar_placeholder.svg';
+
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
 
@@ -19,7 +21,7 @@ export function Profile(){
   const [passwordOld, setPasswordOld] = useState();
   const [passwordNew, setPasswordNew] = useState();
 
-  const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : '/src/assets/avatar_placeholder.svg';
+  const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
 
   const [avatar, setAvatar] = useState(avatarUrl);
   const [avatarFile, setAvatarFile] = useState(null);
